@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Asignación de Soporte</title>
+</head>
+<body>
+    <h1>Se ha asignado el siguiente soporte:</h1>
+    <p>Soporte: {{ support.name }}</p>
+    <p>Descripción: {{ support.description }}</p>
+    <p>Prioridad: {{ support.priority }}</p>
+    <p>Asignado a: {{ assigned_worker.name }}</p>
+    <p>Peso acumulado del día para {{ assigned_worker.name }}: {{ assigned_worker.work_weight_accumulated }}</p>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peso acumulado</title>
+    {% load static %} <!-- Se cargan todas las etiquetas estaticas de django -->
+    <link rel="stylesheet" href="{% static 'css/acumulado.css' %}"> <!-- cargamos estilos -->
+</head>
+<body>
+    <h2>Peso acumulado del día para cada trabajador</h2>
+    <ul>
+        {% for worker in workers %}
+            <li>{{ worker.name }}: {{ worker.work_weight_accumulated }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

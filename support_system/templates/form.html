@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Solicitud de Soporte</title>
+    {% load static %} <!-- Se cargan todas las etiquetas estaticas de django -->
+    <link rel="stylesheet" href="{% static 'css/form.css' %}"> <!-- cargamos estilos -->
+</head>
+<body>
+    <h2>Formulario de Solicitud de Soporte</h2>
+    <form method="POST">
+        {% csrf_token %} {% comment %} Me permite recibir el token del formulario como mecanismo de seguridad {% endcomment %}
+        <div>
+            <label for="name">Nombres:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+        </div>
+        <div>
+            <label for="description">Descripción:</label><br>
+            <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+        </div>
+        <div>
+            <label for="priority">Prioridad:</label><br>
+            <select id="priority" name="priority" required>
+                <option value="">Selecciona la prioridad</option>
+                <option value="1">Baja</option>
+                <option value="2">Media</option>
+                <option value="3">Alta</option>
+            </select><br><br>
+        </div>
+        <div>
+            <label for="weight">Peso:</label><br>
+            <input type="number" id="weight" name="weight" required min="1" max="5"><br><br>
+        </div>
+        <button type="submit">Enviar Solicitud</button>
+    </form>
+</body>
+</html>

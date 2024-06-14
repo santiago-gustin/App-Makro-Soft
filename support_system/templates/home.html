@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %} <!-- Se cargan todas las etiquetas estaticas de django -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"> <!-- cargamos estilos -->
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido</h1>
+        <h4>A continuación podrá solicitar un soporte o acceder al reporte de estos</h4>
+        <div class="button-container">
+            <a href="{% url 'form' %}">
+                <button>Solicitar Soporte</button>
+            </a>
+            <a href="{% url 'acumulado' %}">
+                <button>Ver Reporte</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
